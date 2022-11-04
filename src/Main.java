@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Сотрудник с минимальной зарплатой - " + definitionEmployeeMinSalary());
         System.out.println("Сотрудник с максимальной зарплатой - " + definitionEmployeeMахSalary());
         System.out.println("Среднее значение сумм всех зарплат - " + averageValueSumSalary());
-
+        printAllNames();
 
     }
 
@@ -60,14 +60,22 @@ public class Main {
         }
         return rezult;
     }
+
     public static double averageValueSumSalary() {
-        int counterNonZeroElement  = 0;
+        int counterNonZeroElement = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 counterNonZeroElement++;
             }
         }
-        return sumSalary()/counterNonZeroElement;
+        return sumSalary() / counterNonZeroElement;
     }
 
+    public static void printAllNames() {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                System.out.println(employees[i].getFullName());
+            }
+        }
+    }
 }
